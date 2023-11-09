@@ -4,7 +4,9 @@
 // но в процессе-предке выполнить системный вызов wait().
 // Убедиться, что в этом случае идентификатор процесса потомка на 1
 // больше идентификатора процесса-предка.
-//
+
+// полный объем из мануала
+// два варианта завешения с нулем и не с нулем
 
 
 #include <stdio.h>
@@ -26,8 +28,7 @@ int main(void)
         }
         else if (child_pid[i] == 0)
         {
-            printf("Child: pid = %d, ppid = %d, gid = %d\n", \
-                getpid(), getppid(), getpgrp());
+            printf("Child: pid = %d, ppid = %d, gid = %d\n", getpid(), getppid(), getpgrp());
             return 0;
         }
 
@@ -42,22 +43,20 @@ int main(void)
         if (WIFEXITED(status))
         {
             // Если дочерний процесс завершился нормально
-            printf("Child (pid: %d) exited with code %d\n", \
-                child_pid[i], WEXITSTATUS(status));
+            printf("Child (pid: %d) exited with code %d\n", child_pid[i], WEXITSTATUS(status));
         }
         else if (WIFSIGNALED(status))
         {
             // Если дочерний процесс завершился из-за сигнала
-            printf("Child (pid: %d) received signal %d\n", \
-                child_pid[i], WTERMSIG(status));
+            printf("Child (pid: %d) received signal %d\n", child_pid[i], WTERMSIG(status));
         }
         else if (WIFSTOPPED(status))
         {
             // Если дочерний процесс был остановлен сигналом
-            printf("Child (pid: %d) received signal %d\n", \
-                child_pid[i], WSTOPSIG(status));
+            printf("Child (pid: %d) received signal %d\n", child_pid[i], WSTOPSIG(status));
         }
     }
 
     return 0;
 }
+

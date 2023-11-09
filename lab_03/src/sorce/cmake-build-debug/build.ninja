@@ -73,6 +73,12 @@ build CMakeFiles/sorce.dir/pipe.c.o: C_COMPILER__sorce_unscanned_Debug /home/max
   OBJECT_DIR = CMakeFiles/sorce.dir
   OBJECT_FILE_DIR = CMakeFiles/sorce.dir
 
+build CMakeFiles/sorce.dir/signals.c.o: C_COMPILER__sorce_unscanned_Debug /home/max/c/bmstu_os/lab_03/src/sorce/signals.c || cmake_object_order_depends_target_sorce
+  DEP_FILE = CMakeFiles/sorce.dir/signals.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/sorce.dir
+  OBJECT_FILE_DIR = CMakeFiles/sorce.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target sorce
@@ -81,7 +87,7 @@ build CMakeFiles/sorce.dir/pipe.c.o: C_COMPILER__sorce_unscanned_Debug /home/max
 #############################################
 # Link the static library libsorce.a
 
-build libsorce.a: C_STATIC_LIBRARY_LINKER__sorce_Debug CMakeFiles/sorce.dir/fork.c.o CMakeFiles/sorce.dir/exec.c.o CMakeFiles/sorce.dir/wait.c.o CMakeFiles/sorce.dir/pipe.c.o
+build libsorce.a: C_STATIC_LIBRARY_LINKER__sorce_Debug CMakeFiles/sorce.dir/fork.c.o CMakeFiles/sorce.dir/exec.c.o CMakeFiles/sorce.dir/wait.c.o CMakeFiles/sorce.dir/pipe.c.o CMakeFiles/sorce.dir/signals.c.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/sorce.dir
   POST_BUILD = :

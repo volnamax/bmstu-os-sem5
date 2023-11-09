@@ -6,4 +6,5 @@ set(CMAKE_C_STANDARD 11)
 add_library(sorce fork.c
         exec.c
         wait.c
-        pipe.c)
+        pipe.c
+        signals.c)
